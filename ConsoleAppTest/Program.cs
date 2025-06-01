@@ -24,5 +24,9 @@ internal class Program
 
         // var interpolatedXsYs = xValues.Zip(yValues, (f, s) => new { X = f, Y = s });
         //Console.WriteLine($"interpolatedXsYs: {JsonSerializer.Serialize(interpolatedXsYs)}");
+
+        ScottPlot.Plot myPlot = new();
+        myPlot.Add.Scatter(xValues, yValues);
+        myPlot.SavePng("my-plot.png", 400, 400);
     }
 }
